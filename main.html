@@ -12,14 +12,24 @@
 			//Write your code here
 			let n = arr.length;
 			if(n==0 || n==1) return "-Infinity";
+			let flag = false;
+			for (let i = 0; i < n; i++) {
+				if (arr[i] !== arr[i+1]) {
+					flag = true;
+					break;
+				}
+			}
+			else if(flag){
+				return "-Infinity";
+			}
 			
-			else {arr.sort();
-			return arr[n-2];
-				 }
+			else {
+				arr.sort();
+				return arr[n-2];
+			}
 		}
 	function Main() {
-		
-			var n = prompt("Enter the number of elements");
+		var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
